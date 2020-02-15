@@ -1,19 +1,19 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { PageContainer } from "./PageContainer";
+import { DefaultButton } from "./DefaultButton";
+import styled from "styled-components/native";
+import { StressGame } from "./StressGame";
+
+const green = "#4caf50";
+
+const GreenButton = props => <DefaultButton {...props} bg={green} />;
 
 export default function App() {
+  const [gameState, setGameState] = useState("starting");
+  const startGame = () => setGameState("playing")
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+    <PageContainer>
+      {gameState === "playing" ? <StressGame/> : <GreenButton onPress={startGame}>Start</GreenButton>}
+    </PageContainer>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
