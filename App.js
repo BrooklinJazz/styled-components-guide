@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { PageContainer } from "./PageContainer";
-import { DefaultButton } from "./DefaultButton";
-import styled from "styled-components/native";
 import { StressGame } from "./StressGame";
-
-const green = "#4caf50";
-
-const GreenButton = props => <DefaultButton {...props} bg={green} />;
+import { SuccessButton } from "./SuccessButton";
+import { DangerButton } from "./DangerButton";
 
 export default function App() {
   const [gameState, setGameState] = useState("starting");
-  const startGame = () => setGameState("playing")
+  const startGame = () => setGameState("playing");
+  const winGame = () => setGameState("won");
+  const loseGame = () => setGameState("lost");
   return (
     <PageContainer>
-      {gameState === "playing" ? <StressGame/> : <GreenButton onPress={startGame}>Start</GreenButton>}
+      {gameState === "playing" && <StressGame winGame={winGame} loseGame={loseGame} />}
+      {gameState === "starting" && <SuccessButton onPress={startGame}>Start</SuccessButton>}
+      {gameState === "won" && <SuccessButton onPress={startGame}>You Won! Try Again?</SuccessButton>}
+      {gameState === "lost" && <DangerButton onPress={startGame}>You Lost! Try Again?</DangerButton>}
     </PageContainer>
-  )
+  );
 }

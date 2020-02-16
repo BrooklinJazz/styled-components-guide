@@ -1,5 +1,7 @@
 import styled from "styled-components/native";
-export const CenterColumn = styled.View`
+import { Column } from "./Column";
+
+export const CenterColumn = styled(Column)`
   justify-content: center;
   align-items: center;
 `;
