@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { PageContainer } from "./PageContainer";
-import { StressGame } from "./StressGame";
-import { SuccessButton } from "./SuccessButton";
-import { DangerButton } from "./DangerButton";
+import { PageContainer } from "./components/PageContainer";
+import { StressGame } from "./components/StressGame";
+import { SuccessButton } from "./components/SuccessButton";
+import { DangerButton } from "./components/DangerButton";
 
 export default function App() {
   const [gameState, setGameState] = useState("starting");
