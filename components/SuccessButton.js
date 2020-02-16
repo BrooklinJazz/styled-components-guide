@@ -1,6 +1,7 @@
-import { DefaultButton } from "./DefaultButton";
 import styled from "styled-components/native";
 import { success } from "../colors";
-export const SuccessButton = styled(DefaultButton)`
+import { Button } from "./Button";
+
+export const SuccessButton = styled(Button)`
   background-color: ${success};
 `;
