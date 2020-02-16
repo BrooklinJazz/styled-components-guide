@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Text } from "react-native";
 import { Bar } from "./Bar";
 import { BarContainer } from "./BarContainer";
-import { DefaultButton } from "./DefaultButton";
-import { danger } from "./colors";
 import { SuccessButton } from "./SuccessButton";
-import { Column } from "./Column";
 import styled from "styled-components/native";
 
 const RelaxButton = styled(SuccessButton).attrs(props => ({

@@ -1,4 +1,3 @@
-import { danger } from "./colors";
 import styled, { css } from "styled-components/native";
 import { Column } from "./Column";
 
